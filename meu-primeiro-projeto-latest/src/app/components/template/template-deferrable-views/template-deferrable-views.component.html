@@ -1,0 +1,46 @@
+
+
+<!--
+Deferrable Views, também conhecidos como @defer blocks,
+são uma nova funcionalidade introduzida no Angular 17 
+que permite adiar o carregamento de determinadas partes de uma aplicação.
+Isso pode ser usado para melhorar o desempenho das aplicações, especialmente
+aquelas com grandes quantidades de conteúdo :
+
+*Carregamento de componentes pesados
+* Carregamento de imagens
+
+
+    On- especifica uma condicao de adcionador usando um acionador a lista
+    (idle,timer,viewport,interaction,hover,imediate,prefetch)
+
+    when - especifica uma condicao imperativa como uma expressao que retorna
+    um boleano. Quando esta expressao se torna verdadeira, o espaco redervado
+    e trocado pelo conteudo carregado lentamente. Que pode  ser uma operacao
+    assicrona se as depedencias pprecisarem ser buscada.
+
+    Nota: Varios on triggers SAO SEMPRE condicoes OR. Da mesma forma,on
+    misturado com when tambem sao condicoes OR.
+-->
+<h2 #trigger>Deferrable Views</h2>
+<!-- <button (click)="isTrue = true">Add True</button> -->
+
+<!-- @defer(){
+<app-new-component />
+}@placeholder(minimum 2000ms){
+    <p>Mostrar antes de carregar algo.</p>
+}@loading{
+    <p>Loading....</p>
+}@error{
+    <p>Loading failed</p>
+} -->
+
+@defer(on interaction){
+    <app-new-component />
+    }@placeholder{
+        <p>Mostrar antes de carregar algo.</p>
+    }@loading{
+        <p>Loading....</p>
+    }@error{
+        <p>Loading failed</p>
+    }

@@ -1,0 +1,108 @@
+<p>template-contro-flow works!</p>
+<h5>Nova Forma</h5>
+
+@if(loadingData$ | async; as data){
+<ul>
+    @for(item of data; track item) {
+    <li>{{item}}</li>
+    }
+    @for(item of loadingData$ | async; track item) {
+    <li>{{item}}</li>
+    }
+</ul>
+}@else {
+carregando
+}
+
+<h3>Nova Forma For v2</h3>
+@for(item of itens; track item.name;
+let i = $index;
+let c = $count;
+let f = $first;
+let l = $last;
+let e = $even;
+let o = $odd;) {
+<p>{{item.name}}</p>
+<p>index - {{i}}</p>
+<p>count - {{c}}</p>
+<p>firts - {{f}}</p>
+<p>last - {{f}}</p>
+<p>even - {{e}}</p>
+<p>odd - {{o}}</p>
+}
+
+<ul>
+    @for(item of itens; track item.name){
+    <li>{{item.name}}</li>
+    } @empty{
+    <li>Nenhum item</li>
+    }
+</ul>
+
+@switch(switchcondition){
+    @case('A'){
+        <p>Sim sua letra e A</p>
+    }
+    @case('B'){
+        <p>Sim sua letra e B</p>
+    }
+    @default{
+        <p>Os dados nao foram encontrados</p>
+    }
+}
+
+<h3>IF</h3>
+@if( isTrue) {sim 1 e ===1} @else{ nao esta correto}
+<h5>Forma Antiga</h5>
+<ng-container **ngIf="isTrue; else isfalse">
+    <p>Dener</p>
+    <p>Maria</p>
+</ng-container>
+<ng-template #isfalse>nao esta correto</ng-template>
+
+<ng-container *ngIf="loadingData$ | async as data; else loading">
+    <ul>
+        <ng-container *ngFor="let item of data; trackBy: trackByFn ">
+            <li>{{item}}</li>
+        </ng-container>
+    </ul>
+</ng-container>
+<ng-template #loading>
+    <p>Carregando...</p>
+</ng-template>
+
+<h3>Forma Antiga For v2</h3>
+
+<ng-container *ngFor="
+let item of itens;
+let i = index;
+let c = count;
+let f = first;
+let l = last;
+let e = even;
+let o = odd;
+trackBy: trackByFn
+">
+    <p>{{item.name}}</p>
+    <p>index - {{i}}</p>
+    <p>count - {{c}}</p>
+    <p>firts - {{f}}</p>
+    <p>last - {{f}}</p>
+    <p>even - {{e}}</p>
+    <p>odd - {{o}}</p>
+</ng-container>
+
+
+<input #name type="text">
+<button (click)="addNewName(name.value)">addName</button>
+
+<ul>
+    <ng-container *ngIf="itens.length === 0; else itensExist">
+        <li>forma antiga sem valores</li>
+    </ng-container>
+    <ng-template #itensExist>
+        <ng-container *ngFor="let item of itens;">
+            <li>{{item}}</li>
+        </ng-container>
+    </ng-template>
+</ul>

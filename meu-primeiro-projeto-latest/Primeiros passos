@@ -1,0 +1,15 @@
+Setup 
+1. Instalar Node 
+2. Instalar Angular CLI
+npm install -g @angular/cli
+
+
+Criando um Projeto
+ng new meu-primeiro-projeto-latest
+
+Subindo o projeto
+ng s --open
+
+Criando um Component
+dentro da Pasta App
+ng g component components/new-component
