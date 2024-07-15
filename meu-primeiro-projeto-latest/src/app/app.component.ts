@@ -6,6 +6,7 @@ import { TemplateVariablesComponent } from './componets/template/template-variab
 import { TemplateControFlowComponent2  } from './componets/template/template-contro-flow/template-contro-flow.component';
 import { TemplateDeferrableViewsComponent } from './components/template/template-deferrable-views/template-deferrable-views.component';
 import { SignalsComponent } from "./components/signals/signals/signals.component";
+import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai-ou-mae/pai-ou-mae.component';
 
 @Component({
     selector: 'app-root',
@@ -18,14 +19,17 @@ import { SignalsComponent } from "./components/signals/signals/signals.component
   <h2>Control Flow </h2>
   <app-template-contro-flow/> -->
   <!-- <app-template-deferrable-views/> -->
-  <app-signals>
+  <!-- <app-signals> -->
+    <app-pai-ou-mae/>
   `,
     imports: [RouterOutlet,
         NewComponent,
         TemplateBindingComponent,
         TemplateVariablesComponent,
         TemplateControFlowComponent2,
-        TemplateDeferrableViewsComponent, SignalsComponent]
+        TemplateDeferrableViewsComponent,
+        SignalsComponent,
+        PaiOuMaeComponent]
 })
 export class AppComponent {
  
