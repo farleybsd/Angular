@@ -25,7 +25,7 @@ import { ReactiveFormsComponent } from './components/forms/reactive-forms/reacti
   <!-- <app-signals> -->
     <!-- <app-pai-ou-mae/>
     <app-angular-pipes> -->
-      <app-template-forms/>
+      <!-- <app-template-forms/> -->
       <app-reactive-forms/>
   `,
     imports: [RouterOutlet,
