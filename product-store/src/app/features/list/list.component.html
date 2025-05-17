@@ -3,7 +3,7 @@
 </div>
 
 @for (product of products ; track product.id) {
-    <app-card (edit)="onEdit(product)"  [product]="product"></app-card>
+    <app-card (edit)="onEdit(product)"  [product]="product" (delete)="onDelete(product)"></app-card>
 }
 
 
