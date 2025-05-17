@@ -2,7 +2,7 @@
     <a mat-raised-button color="primary" [routerLink]="'/create-product'">Criar produto</a>
 </div>
 
-@for (product of products ; track product.id) {
+@for (product of products() ; track product.id) {
     <app-card (edit)="onEdit(product)"  [product]="product" (delete)="onDelete(product)"></app-card>
 }
 
